@@ -1,9 +1,15 @@
 require('dotenv').config(); // Buscando as variáveis no .env e guardando-as em process.env
 const express = require("express"); // Importando a bib express
-const app = express() // Criando uma instância "app" com express
+const app = express(); // Criando uma instância "app" com express
+
+// Importando rotas 
+const userRoutes = require('./routes/users.routes');
 
 // Middleware padrão do express que trata as entradas como JSON
-app.use(express.json())
+app.use(express.json());
+
+// Montando as rotas 
+app.use('/users', userRoutes);
 
 // Criando a rota base da API 
 app.get('/', (req, res) => {
