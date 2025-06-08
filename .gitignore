@@ -3,3 +3,7 @@ node_modules/
 
 # Arquivo env
 .env
+
+/src/generated/prisma
+
+/src/generated/prisma
